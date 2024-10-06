@@ -24,7 +24,7 @@ def handle_arguments(args):
             "update",
             "delete",
             "create",
-            "read",
+            "read_data",
         ],
     )
 
@@ -86,7 +86,7 @@ def main():
             args.total_pure_alcohol,
         )
 
-    elif args.action == "read":
+    elif args.action == "read_data":
         data = read_data()
         print(data)
 
