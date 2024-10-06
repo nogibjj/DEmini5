@@ -1,5 +1,4 @@
-# Mini 5  
-## SQLite Python CRUD
+# Mini 5  SQLite Python CRUD
 
 [![CI](https://github.com/nogibjj/DEmini5/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/DEmini5/actions/workflows/cicd.yml)
 
