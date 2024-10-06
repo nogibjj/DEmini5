@@ -42,7 +42,7 @@ generate_and_push:
 extract:
 	python main.py extract
 
-transform_load: 
+transform: 
 	python main.py transform
 
 query:

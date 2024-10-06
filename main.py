@@ -4,7 +4,7 @@ ETL-Query script
 import sys
 import argparse
 from mylib.extract import extract
-from mylib.transform_load import load
+from mylib.transform_load import transform
 from mylib.query import (
     update_record,
     delete_record,
@@ -62,7 +62,7 @@ def main():
 
     elif args.action == "transform":
         print("Transforming data...")
-        load()
+        transform()
 
     elif args.action == "update":
         update_record(

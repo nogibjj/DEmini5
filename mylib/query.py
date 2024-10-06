@@ -52,19 +52,19 @@ def read_data():
 def update_record(
             record_id,
             country, 
-            beer_sevrings,
+            beer_servings,
             spirit_servings,
             wine_servings,
             total_pure_alcohol
 ):
     """update example query"""
-    conn = sqlite3.connect("alcoholDB.db")
+    conn = sqlite3.connect("samDB.db")
     c = conn.cursor()
     c.execute(
         """
         UPDATE alcoholDB 
         SET country=?, 
-        beer_sevrings=?, 
+        beer_servings=?, 
         spirit_servings=?, 
         wine_servings=?, 
         total_pure_alcohol=?
@@ -72,7 +72,7 @@ def update_record(
         """,
         (
             country, 
-            beer_sevrings,
+            beer_servings,
             spirit_servings,
             wine_servings,
             total_pure_alcohol,
@@ -85,8 +85,8 @@ def update_record(
     log_query(
         f"""UPDATE alcoholDB SET 
         country={country}, 
-        beer_sevringst=
-        {beer_sevrings},
+        beer_servings=
+        {beer_servings},
         spirit_servings={spirit_servings}, 
         wine_servings={wine_servings}, 
         total_pure_alcohol={total_pure_alcohol},
@@ -96,7 +96,7 @@ def update_record(
 
 def delete_record(record_id):
     """delete example query"""
-    conn = sqlite3.connect("alcoholDB.db")
+    conn = sqlite3.connect("samDB.db")
     c = conn.cursor()
     c.execute("DELETE FROM alcoholDB WHERE id=?", (record_id,))
     conn.commit()

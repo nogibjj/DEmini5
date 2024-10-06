@@ -6,7 +6,7 @@ import csv
 # import os
 
 #load the csv file and insert into a new sqlite3 database
-def load(dataset="data/alcohol.csv"):
+def transform(dataset="data/alcohol.csv"):
     """"Transforms and Loads data into the local SQLite3 database"""
 
     #prints the full working directory and path
