@@ -12,6 +12,7 @@ from mylib.query import (
     read_data,
 )
 
+
 def handle_arguments(args):
     """add action based on inital calls"""
     parser = argparse.ArgumentParser(description="ETL-Query script")
@@ -26,10 +27,10 @@ def handle_arguments(args):
             "read",
         ],
     )
-    
+
     args = parser.parse_args(args[:1])
     print(args.action)
-    
+
     if args.action == "update":
         parser.add_argument("record_id")
         parser.add_argument("country")
@@ -58,13 +59,11 @@ def main():
     if args.action == "extract":
         print("Extracting data...")
         extract()
-        
-        
+
     elif args.action == "transform":
         print("Transforming data...")
         load()
-        
-        
+
     elif args.action == "update":
         update_record(
             args.record_id,
@@ -72,33 +71,28 @@ def main():
             args.beer_servings,
             args.spirit_servings,
             args.wine_servings,
-            args.total_pure_alcohol
+            args.total_pure_alcohol,
         )
-        
-        
+
     elif args.action == "delete":
         delete_record(args.record_id)
-        
-        
+
     elif args.action == "create":
         create_record(
             args.country,
             args.beer_servings,
             args.spirit_servings,
             args.wine_servings,
-            args.total_pure_alcohol
+            args.total_pure_alcohol,
         )
-        
-        
+
     elif args.action == "read":
         data = read_data()
         print(data)
-        
-        
+
     else:
         print("Unknown action")
 
 
 if __name__ == "__main__":
     main()
-

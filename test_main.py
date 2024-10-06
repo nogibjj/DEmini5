@@ -33,17 +33,7 @@ def test_transform_load():
 def test_update_record():
     """tests update"""
     result = subprocess.run(
-        [
-            "python",
-            "main.py",
-            "update",
-            "3",
-            "country_A",
-            "10",
-            "10",
-            "10",
-            "10"
-        ],
+        ["python", "main.py", "update", "3", "country_A", "10", "10", "10", "10"],
         capture_output=True,
         text=True,
         check=True,
@@ -65,17 +55,7 @@ def test_delete_record():
 def test_create_record():
     """tests create"""
     result = subprocess.run(
-        [
-            "python",
-            "main.py",
-            "update",
-            "1000",
-            "country_A",
-            "1",
-            "1",
-            "1",
-            "1.1"
-        ],
+        ["python", "main.py", "update", "1000", "country_A", "1", "1", "1", "1.1"],
         capture_output=True,
         text=True,
         check=True,

@@ -13,7 +13,7 @@ def load(dataset="data/alcohol.csv"):
     # print(os.getcwd())
     payload = csv.reader(open(dataset, newline=''), delimiter=',')
     next(payload)
-    conn = sqlite3.connect('alcoholDB.db')
+    conn = sqlite3.connect('samDB.db')
     c = conn.cursor()
     c.execute("DROP TABLE IF EXISTS alcoholDB")
     c.execute("""
@@ -22,6 +22,7 @@ def load(dataset="data/alcohol.csv"):
                     country TEXT, 
                     beer_servings INTEGER,
                     spirit_servings INTEGER,
+              
                     wine_servings INTEGER,
                     total_pure_alcohol
                   )
@@ -40,5 +41,6 @@ def load(dataset="data/alcohol.csv"):
                   payload)
     conn.commit()
     conn.close()
-    return "alcoholDB.db"
+    return "samDB.db"
 
+# load(dataset="data/alcohol.csv")

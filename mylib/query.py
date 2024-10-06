@@ -16,7 +16,7 @@ def create_record(
     country, beer_servings, spirit_servings, wine_servings, total_pure_alcohol
 ):
     """create example query"""
-    conn = sqlite3.connect("alcoholDB.db")
+    conn = sqlite3.connect("samDB.db")
     c = conn.cursor()
     c.execute(
         """
