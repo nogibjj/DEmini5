@@ -41,7 +41,7 @@ def create_record(
 
 def read_data():
     """read data"""
-    conn = sqlite3.connect("alcoholDB.db")
+    conn = sqlite3.connect("samDB.db")
     c = conn.cursor()
     c.execute("SELECT * FROM alcoholDB")
     data = c.fetchall()

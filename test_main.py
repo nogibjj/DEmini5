@@ -66,7 +66,7 @@ def test_create_record():
 def test_read_data():
     """tests read_data"""
     result = subprocess.run(
-        ["python", "main.py", "read"],
+        ["python", "main.py", "read_data"],
         capture_output=True,
         text=True,
         check=True,
