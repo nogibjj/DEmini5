@@ -19,33 +19,33 @@ def handle_arguments(args):
         "action",
         choices=[
             "extract",
-            "transform_load",
-            "update_record",
-            "delete_record",
-            "create_record",
-            "read_data",
+            "transform",
+            "update",
+            "delete",
+            "create",
+            "read",
         ],
     )
     
     args = parser.parse_args(args[:1])
     print(args.action)
     
-    if args.action == "update_record":
+    if args.action == "update":
         parser.add_argument("record_id")
         parser.add_argument("country")
-        parser.add_argument("beer_sevrings")
+        parser.add_argument("beer_servings")
         parser.add_argument("spirit_servings")
         parser.add_argument("wine_servings")
         parser.add_argument("total_pure_alcohol")
 
-    if args.action == "create_record":
+    if args.action == "create":
         parser.add_argument("country")
-        parser.add_argument("beer_sevrings")
+        parser.add_argument("beer_servings")
         parser.add_argument("spirit_servings")
         parser.add_argument("wine_servings")
         parser.add_argument("total_pure_alcohol")
 
-    if args.action == "delete_record":
+    if args.action == "delete":
         parser.add_argument("record_id", type=int)
 
     return parser.parse_args(sys.argv[1:])
@@ -60,37 +60,37 @@ def main():
         extract()
         
         
-    elif args.action == "transform_load":
+    elif args.action == "transform":
         print("Transforming data...")
         load()
         
         
-    elif args.action == "update_record":
+    elif args.action == "update":
         update_record(
             args.record_id,
             args.country,
-            args.beer_sevrings,
+            args.beer_servings,
             args.spirit_servings,
             args.wine_servings,
             args.total_pure_alcohol
         )
         
         
-    elif args.action == "delete_record":
+    elif args.action == "delete":
         delete_record(args.record_id)
         
         
-    elif args.action == "create_record":
+    elif args.action == "create":
         create_record(
             args.country,
-            args.beer_sevrings,
+            args.beer_servings,
             args.spirit_servings,
             args.wine_servings,
             args.total_pure_alcohol
         )
         
         
-    elif args.action == "read_data":
+    elif args.action == "read":
         data = read_data()
         print(data)
         

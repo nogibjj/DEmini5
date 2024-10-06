@@ -1,4 +1,4 @@
-# Mini-Project 5  TianjiRao
+# Mini 5  
 ## SQLite Python CRUD
 
 [![CI](https://github.com/nogibjj/sqlite_python_CRUD_tr/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/sqlite_python_CRUD_tr/actions/workflows/cicd.yml)
@@ -28,20 +28,20 @@ The purpose of this project is to create CRUD actions using SQLite and Python, a
 ## Tests
 ### CRUD Actions
 1. **Create**   
-Create a new record using `create_record()`: 
-python main.py update_record 1000 country_A 1 1 1 1.1
+Create a new record using `create()`: 
+python main.py update 1000 country_A 1 1 1 1.1
 
 2. **Read** 
-Read all data using `read_data()`:   
-python main.py read_data
+Read all data using `read()`:   
+python main.py read
 
 3. **Update**   
-Update a raw with primary key 3 using `create_record`:  
-python main.py update_record 3 country_A 10 10 10 10
+Update a raw with primary key 3 using `update`:  
+python main.py update 3 country_A 10 10 10 10
 
 4. **Delete**   
-Delete one record with primary key 1 using `delete_record()`: 
-python delete_record 1
+Delete one record with primary key 1 using `delete()`: 
+python delete 1
 
 
 ## Reference

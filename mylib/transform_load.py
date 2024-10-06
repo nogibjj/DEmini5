@@ -20,7 +20,7 @@ def load(dataset="data/alcohol.csv"):
               CREATE TABLE alcoholDB (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     country TEXT, 
-                    beer_sevrings INTEGER,
+                    beer_servings INTEGER,
                     spirit_servings INTEGER,
                     wine_servings INTEGER,
                     total_pure_alcohol
@@ -30,7 +30,7 @@ def load(dataset="data/alcohol.csv"):
     c.executemany("""
                   INSERT INTO alcoholDB (
                         country, 
-                        beer_sevrings,
+                        beer_servings,
                         spirit_servings,
                         wine_servings,
                         total_pure_alcohol

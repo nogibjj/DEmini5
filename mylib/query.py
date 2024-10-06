@@ -13,7 +13,7 @@ def log_query(query):
 
 
 def create_record(
-    country, beer_sevrings, spirit_servings, wine_servings, total_pure_alcohol
+    country, beer_servings, spirit_servings, wine_servings, total_pure_alcohol
 ):
     """create example query"""
     conn = sqlite3.connect("alcoholDB.db")
@@ -21,10 +21,10 @@ def create_record(
     c.execute(
         """
         INSERT INTO alcoholDB 
-        (country, beer_sevrings, spirit_servings, wine_servings, total_pure_alcohol) 
+        (country, beer_servings, spirit_servings, wine_servings, total_pure_alcohol) 
         VALUES (?, ?, ?, ?, ?)
         """,
-        (country, beer_sevrings, spirit_servings, wine_servings, total_pure_alcohol),
+        (country, beer_servings, spirit_servings, wine_servings, total_pure_alcohol),
     )
     conn.commit()
     conn.close()
@@ -32,7 +32,7 @@ def create_record(
     log_query(
         f"""INSERT INTO alcoholDB VALUES (
                 {country}, 
-                {beer_sevrings},
+                {beer_servings},
                 {spirit_servings},
                 {wine_servings},
                 {total_pure_alcohol});"""
